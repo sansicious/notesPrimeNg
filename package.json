@@ -4,12 +4,14 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
-    "test": "ng test",
-    "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "postinstall": "npm run typings install",
+    "typings": "typings",
+    "tsc": "tsc",
+    "build": "webpack",
+    "webpack": "webpack",
+    "webpack:w": "webpack -w",
+    "webpack-dev-server": "webpack-dev-server",
+    "start": "npm run tsc && npm run webpack-dev-server"
   },
   "private": true,
   "dependencies": {
@@ -22,9 +24,12 @@
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "core-js": "^2.4.1",
+    "primeng": "^2.0.0-rc.3",
+    "reflect-metadata": "^0.1.9",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.7.2",
+    "systemjs": "0.20.5"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
@@ -42,6 +47,8 @@
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.3"
+    "typescript": "~2.0.3",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   }
 }

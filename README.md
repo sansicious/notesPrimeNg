@@ -1,0 +1,2 @@
+# notesPrimeNg
+learning ng2
